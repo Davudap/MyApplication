@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cyanPrimary">#91e0e7</color>
+    <color name="cyanLight">#c4ffff</color>
+    <color name="cyanDark">#5faeb5</color>
+    <color name="brownPrimary">#4b3f42</color>
+    <color name="brownLight">#776a6d</color>
+    <color name="brownDark">#23191b</color>
+   
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
