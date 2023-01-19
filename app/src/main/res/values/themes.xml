@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MyApplication" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.MyApplication" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/cyanPrimary</item>
         <item name="colorPrimaryVariant">@color/cyanDark</item>
@@ -12,5 +12,14 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="21">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+    <style name="MyButtonRaised" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/cyanPrimary</item>
+        <item name="colorPrimaryDark">@color/cyanDark</item>
+        <item name="colorAccent">@color/brownPrimary</item>
+        <item name="colorButtonNormal">@color/brownPrimary</item>
+        <item name="colorControlHighlight">@color/brownLight</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:colorPressedHighlight">@color/brownLight</item>
     </style>
 </resources>

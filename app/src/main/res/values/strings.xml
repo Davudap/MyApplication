@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Petgram</string>
+    <string name="textClick">click</string>
+    <string name="textFav">Agregado a Favoritos</string>
+    <string name="titulo_tarjeta">Android 5.0</string>
+    <string name="descripcion_tarjeta">Esta es la version de android que utilizo.</string>
+
+    <string name="pfoto">foto</string>
+    <string name="pnombre">nombre</string>
+    <string name="prating">rating</string>
+    <string name="plista">lista</string>
+    <string name="blista">blista</string>
+
 </resources>
