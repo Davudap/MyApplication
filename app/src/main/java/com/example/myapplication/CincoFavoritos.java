@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -27,9 +28,15 @@ public class CincoFavoritos extends AppCompatActivity {
         setContentView(R.layout.activity_cinco_favoritos);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.miActionBar);
+
+        toolbar.removeAllViews();
+
         setSupportActionBar(toolbar);
 
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
         mascotasFavoritos();
 
