@@ -1,8 +1,8 @@
 # Main Activity
 
-![](pantallazo.png)
+![](pantallazo_home.png)
 
 ---
 # Favoritos Activity
 
-![](pantallazo2.png)
+![](pantallazo_profile.png)
