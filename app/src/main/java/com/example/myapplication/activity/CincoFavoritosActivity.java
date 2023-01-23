@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.activity;
 
 import static java.lang.Integer.compare;
 
@@ -9,13 +9,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.widget.ImageButton;
+
+import com.example.myapplication.clases.Mascota;
+import com.example.myapplication.adapter.MascotaAdaptador;
+import com.example.myapplication.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 
-public class CincoFavoritos extends AppCompatActivity {
+public class CincoFavoritosActivity extends AppCompatActivity {
 
     private ArrayList<Mascota> mascotas;
     private ArrayList<Mascota> favMascotas;

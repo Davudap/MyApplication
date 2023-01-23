@@ -1,50 +1,48 @@
-package com.example.myapplication;
-
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+package com.example.myapplication.fragments;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Layout;
-import android.util.Log;
-import android.view.View;
-import android.widget.Adapter;
-import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
-import android.widget.ListView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageButton;
+
+import com.example.myapplication.R;
+import com.example.myapplication.activity.CincoFavoritosActivity;
+import com.example.myapplication.activity.MainActivity;
+import com.example.myapplication.adapter.MascotaAdaptador;
+import com.example.myapplication.clases.Mascota;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+
+public class CardViewFragment extends Fragment {
 
 
     private ArrayList<Mascota> mascotas;
 
     private RecyclerView listaMascotas;
 
+    public CardViewFragment() {
+        // Required empty public constructor
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.miActionBar);
-        setSupportActionBar(toolbar);
+        View view = inflater.inflate(R.layout.fragment_card_view, container, false);
 
-        ActionBar actionBar = getSupportActionBar();;
 
-        listaMascotas = findViewById(R.id.rvMascotas);
+        listaMascotas = view.findViewById(R.id.rvMascotas);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
         listaMascotas.setLayoutManager(linearLayoutManager);
@@ -54,14 +52,12 @@ public class MainActivity extends AppCompatActivity {
 
         clickFiveFavorite();
 
+        return view;
     }
-
 
     public void clickFiveFavorite(){
 
-        ImageButton ibFav = findViewById(R.id.ibFav);
-
-
+        ImageButton ibFav = getActivity().findViewById(R.id.ibFav);
 
         ibFav.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 Bundle args = new Bundle();
                 args.putSerializable(getResources().getString(R.string.plista),(Serializable) mascotas);
 
-                Intent intent = new Intent(MainActivity.this, CincoFavoritos.class);
+                Intent intent = new Intent(getActivity(), CincoFavoritosActivity.class);
 
                 intent.putExtra(getResources().getString(R.string.blista), args);
 
@@ -91,17 +87,10 @@ public class MainActivity extends AppCompatActivity {
         mascotas.add(new Mascota(R.drawable.ic_rabbit, "Javier", 5));
         mascotas.add(new Mascota(R.drawable.ic_dog, "Funes", 2));
 
-        ArrayList<String> nombresMascotas =new ArrayList<String>();
-        for (Mascota mascota:mascotas) {
-            nombresMascotas.add(mascota.getNombre());
-        }
     }
 
     public void inicializarAdaptador(){
-        MascotaAdaptador adaptador = new MascotaAdaptador(this, mascotas);
+        MascotaAdaptador adaptador = new MascotaAdaptador(getActivity(), mascotas);
         listaMascotas.setAdapter(adaptador);
     }
-
-
-
 }

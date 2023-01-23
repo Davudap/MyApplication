@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.PerfilFragment"
+    android:orientation="vertical">
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/civPerfil"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:civ_border="true"
+        android:src="@drawable/ic_dog"
+        app:civ_border_color="@color/cyanDark"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/cv_margin"
+        />
+
+    <TextView
+        android:id="@+id/tvNombrePerfil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="@dimen/sizeTitulo"
+        android:layout_margin="@dimen/cv_margin"
+        android:textStyle="bold"
+       />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/cv_margin"
+        android:background="@color/cyanDark"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPerfilFotos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+
+
+</LinearLayout>

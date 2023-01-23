@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    tools:context=".activity.CincoFavoritosActivity"
-    android:orientation="vertical"
-    >
+    tools:context=".activity.AboutActivity"
+    android:orientation="vertical">
 
     <include android:id="@+id/miActionBar"
         android:layout_width="match_parent"
@@ -17,19 +14,20 @@
         >
     </include>
 
-    <RelativeLayout
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="30dp"
+        android:layout_margin="@dimen/cv_margin"
+        />
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvMascotas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/activity_margin"
-            />
-
-    </RelativeLayout>
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/cv_margin"
+        android:text="@string/AcercaDePetgram"
+        />
 
 
 </LinearLayout>

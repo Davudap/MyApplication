@@ -5,10 +5,28 @@
     <string name="titulo_tarjeta">Android 5.0</string>
     <string name="descripcion_tarjeta">Esta es la version de android que utilizo.</string>
 
+    <!--Parametros de cardview_mascotas-->
     <string name="pfoto">foto</string>
     <string name="pnombre">nombre</string>
     <string name="prating">rating</string>
     <string name="plista">lista</string>
     <string name="blista">blista</string>
+
+    <!--Menu-->
+    <string name="menu_about">Acerca De</string>
+    <string name="menu_contact">Contacto</string>
+    <string name="menu_edit">Edit</string>
+    <string name="menu_delete">Delete</string>
+    <string name="menu_view">View Image</string>
+    <string name="menu_detail">Detail</string>
+
+    <!--Formulario para ContactActivity-->
+    <string name="fNombre">Nombre</string>
+    <string name="fCorreo">Correo</string>
+    <string name="fMensaje">Mensaje</string>
+    <string name="fEnviar">Enviar</string>
+
+    <!-- Acerca de Petgram -->
+    <string name="AcercaDePetgram">Petgram es una aplicacion de mascotas</string>
 
 </resources>
