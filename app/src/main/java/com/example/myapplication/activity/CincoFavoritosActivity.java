@@ -13,6 +13,7 @@ import android.os.Bundle;
 import com.example.myapplication.clases.Mascota;
 import com.example.myapplication.adapter.MascotaAdaptador;
 import com.example.myapplication.R;
+import com.example.myapplication.database.ConstructorMascotas;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,69 +21,57 @@ import java.util.Collections;
 
 public class CincoFavoritosActivity extends AppCompatActivity {
 
-    private ArrayList<Mascota> mascotas;
     private ArrayList<Mascota> favMascotas;
 
-    private RecyclerView listaMascotas;
+    private RecyclerView rvMascotas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cinco_favoritos);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.miActionBar);
+       Toolbar toolbar = (Toolbar) findViewById(R.id.miActionBar);
 
         toolbar.removeAllViews();
 
         setSupportActionBar(toolbar);
 
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        ultimasCincoMascotasFavoritas();
 
-
-        mascotasFavoritos();
-
-
-        listaMascotas = findViewById(R.id.rvMascotas);
+        rvMascotas = findViewById(R.id.rvMascotas);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
-        listaMascotas.setLayoutManager(linearLayoutManager);
+        rvMascotas.setLayoutManager(linearLayoutManager);
 
         inicializarAdaptador();
 
     }
 
-    public void mascotasFavoritos(){
+
+    public void ultimasCincoMascotasFavoritas(){
+
+  /*      favMascotas = new ArrayList<Mascota>();
 
 
-        Bundle parametros = getIntent().getBundleExtra(getResources().getString(R.string.blista));
+        favMascotas.add(new Mascota(R.drawable.ic_dog, "Firulais", 1));
+        favMascotas.add(new Mascota(R.drawable.ic_cat, "Michi", 5));
+        favMascotas.add(new Mascota(R.drawable.ic_dog, "Firulais", 0));
+        favMascotas.add(new Mascota(R.drawable.ic_cat, "Michi", 2));
+        favMascotas.add(new Mascota(R.drawable.ic_pinguin, "Fabri", 1));*/
 
-        mascotas = (ArrayList<Mascota>) parametros.getSerializable(getResources().getString(R.string.plista));
+        ConstructorMascotas constructorMascotas = new ConstructorMascotas(this);
 
-        ordernarMascotas();
-
-        favMascotas = new ArrayList<Mascota>();
-
-
-        for(int i = 0; i < 5; i++)
-            favMascotas.add(mascotas.get(i));
-
-    }
-
-    public void ordernarMascotas(){
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            mascotas.sort(Collections.reverseOrder((mascota1, mascota2) -> compare(mascota1.getRating(), mascota2.getRating())));
-        }
+        favMascotas = constructorMascotas.topRating();
 
     }
 
     public void inicializarAdaptador(){
-        MascotaAdaptador adaptador = new MascotaAdaptador(this, favMascotas);
-        listaMascotas.setAdapter(adaptador);
+        MascotaAdaptador adaptador = new MascotaAdaptador(this, favMascotas, R.layout.cardview_mascota);
+        rvMascotas.setAdapter(adaptador);
     }
 
 }

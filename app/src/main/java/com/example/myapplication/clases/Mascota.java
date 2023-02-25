@@ -1,11 +1,18 @@
 package com.example.myapplication.clases;
 
+
 import java.io.Serializable;
 
-public class Mascota implements Serializable {
+public class Mascota{
+
+    private int id;
     private int foto;
     private String nombre;
     private int rating;
+
+    public Mascota(){
+
+    }
 
     public Mascota(int foto, String nombre, int rating) {
         this.foto = foto;
@@ -36,4 +43,13 @@ public class Mascota implements Serializable {
     public void setRating(int rating) {
         this.rating = rating;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 }

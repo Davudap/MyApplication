@@ -15,6 +15,7 @@
     <!--Menu-->
     <string name="menu_about">Acerca De</string>
     <string name="menu_contact">Contacto</string>
+    <string name="menu_bluetooth">Bluetooth</string>
     <string name="menu_edit">Edit</string>
     <string name="menu_delete">Delete</string>
     <string name="menu_view">View Image</string>

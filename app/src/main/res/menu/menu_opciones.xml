@@ -11,4 +11,11 @@
         android:title="@string/menu_contact"
         android:orderInCategory="100">
     </item>
+
+    <item
+        android:id="@+id/mBluetooth"
+        android:title="@string/menu_bluetooth"
+        android:orderInCategory="102">
+    </item>
+
 </menu>

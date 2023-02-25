@@ -20,6 +20,7 @@ import com.example.myapplication.adapter.PageAdapter;
 import com.example.myapplication.clases.Mascota;
 import com.example.myapplication.adapter.MascotaAdaptador;
 import com.example.myapplication.R;
+import com.example.myapplication.database.ConstructorMascotas;
 import com.example.myapplication.fragments.CardViewFragment;
 import com.example.myapplication.fragments.PerfilFragment;
 import com.google.android.material.tabs.TabLayout;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewPager);
 
         setViewPager();
+
     }
 
     /*  Menu */
@@ -67,6 +69,11 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.mContact:
                 intent = new Intent(MainActivity.this, ContactActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.mBluetooth:
+                intent = new Intent(MainActivity.this, BluetoothActivity.class);
                 startActivity(intent);
                 break;
         }
@@ -93,6 +100,5 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_profile);
 
     }
-
 
 }
